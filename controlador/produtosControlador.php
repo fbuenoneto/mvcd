@@ -13,6 +13,7 @@ function adicionar(){
         
         $nome = $_POST["usuario"];
         $email = $_POST["email"];
+        $produto = $POST["produto"];
         $senha = $_POST["senha"];
         
         redirecionar ("usuario/index");
