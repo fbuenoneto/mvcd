@@ -15,7 +15,7 @@ function adicionar() {
         alert(adicionarUsuario($nome, $email, $senha));
         redirecionar("usuario/index");
     } else {
-        exibir("usuario/formulario");
+        exibir("usuario/login");
     }
 }
 
