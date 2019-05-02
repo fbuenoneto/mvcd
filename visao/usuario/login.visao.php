@@ -35,7 +35,7 @@
             <td><input type="text" name="confirme" size="25"></td>
           </tr>
           <tr>
-              <td><button type="submit">Login</button></td>
+              <td><a href="usuario/adicionar"><button type="submit">Login</button></a></td>
           </tr>
         </table>
       </div>
