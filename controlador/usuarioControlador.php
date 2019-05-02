@@ -11,8 +11,13 @@ function adicionar() {
     if (ehPost()) {
         $nome = $_POST["usuario"];
         $email = $_POST["email"];
+
+            if (strlen(trim($_POST['email'])) == 0) {
+            $errors[] = "Você deve inserir um e-mail.";
+            }
+            
         $senha = $_POST["senha"];
-        alert(adicionarUsuario($nome, $email, $senha));
+        alert(adicionarUsuario($nome, $email, $errors,$senha));
         redirecionar("usuario/index");
     } else {
         exibir("usuario/login");
