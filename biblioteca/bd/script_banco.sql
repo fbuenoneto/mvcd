@@ -1,18 +1,84 @@
-DROP DATABASE mvcd;
-CREATE DATABASE mvcd;
+CREATE DATABASE LojaWeb; 
+USE LojaWeb;
 
-USE mvcd;
+CREATE TABLE usuario(
+idusuario INT(11) NOT NULL AUTO_INCREMENT,
+nomeusuario VARCHAR(60) NOT NULL,
+email VARCHAR(60) NOT NULL,
+senha VARCHAR(60) NOT NULL,
+cpf VARCHAR(60) NOT NULL,
+datadenascimento VARCHAR(10) NOT NULL,
+sexo VARCHAR(60) NOT NULL,
+tipousuario VARCHAR(5) NOT NULL,
+PRIMARY KEY(idusuario)
+);
+  
+CREATE TABLE endereco(
+idendereco INT(11) NOT NULL AUTO_INCREMENT,
+idusuario INT(11) NOT NULL,
+logradouro VARCHAR(60) NOT NULL,
+numero VARCHAR(7) NOT NULL, 
+complemento VARCHAR(60) NOT NULL,
+bairro VARCHAR(60) NOT NULL,
+cidade VARCHAR(60) NOT NULL,
+cep VARCHAR(60) NOT NULL,
+PRIMARY KEY(idendereco),
+FOREIGN KEY(idusuario) REFERENCES usuario(idusuario) ON DELETE CASCADE ON UPDATE CASCADE
+);
 
-CREATE TABLE IF NOT EXISTS `mvcd`.`usuario` (
-  `id` INT(11) NOT NULL AUTO_INCREMENT,
-  `nome` VARCHAR(100) NOT NULL,
-  `senha` VARCHAR(100) NOT NULL,
-  `email` VARCHAR(100) NOT NULL,
-  `papel` VARCHAR(100) NOT NULL DEFAULT 'usuario'
-  PRIMARY KEY (`id`))
-ENGINE = InnoDB
-AUTO_INCREMENT = 24
-DEFAULT CHARACTER SET = utf8
+CREATE TABLE pedido(
+idpedido INT(11) NOT NULL AUTO_INCREMENT,
+idusuario INT(11) NOT NULL, 
+idendereco INT(11) NOT NULL,
+datacompra DATE NOT NULL,
+PRIMARY KEY(idpedido),
+FOREIGN KEY(idusuario) REFERENCES usuario(idusuario) ON DELETE CASCADE ON UPDATE CASCADE,
+FOREIGN KEY(idendereco) REFERENCES endereco(idendereco) ON DELETE CASCADE ON UPDATE CASCADE
+);
 
-INSERT INTO `mvcd`.`usuario` (`nome`, `senha`, `email`, `papel`) VALUES ('admin', '123', 'admin@admin', 'admin');
-INSERT INTO `mvcd`.`usuario` (`nome`, `senha`, `email`, `papel`) VALUES ('usuario', '123', 'usuario@usuario', 'usuario');
+CREATE TABLE produtos(
+idproduto INT(11) NOT NULL AUTO_INCREMENT,
+preco DOUBLE NOT NULL,
+nomeproduto VARCHAR(30) NOT NULL,
+descricao VARCHAR(60) NOT NULL,
+tamanho VARCHAR(60) NOT NULL,
+imagem VARCHAR(60) NOT NULL,
+sexo VARCHAR(60) NOT NULL,
+categoria VARCHAR(60) NOT NULL,
+estoque_minimo INT(11) NOT NULL,
+estoque_maximo INT(11) NOT NULL,
+PRIMARY KEY(idproduto)
+);
+
+CREATE TABLE estoque(
+idestoque INT(11) NOT NULL AUTO_INCREMENT,
+id_produto INT(11) NOT NULL,
+qtde INT(11) NOT NULL,
+PRIMARY KEY(idestoque),
+FOREIGN KEY(id_produto) REFERENCES produtos(idproduto) ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+CREATE TABLE pedido_produto(
+idproduto INT(11) NOT NULL,
+idpedido INT(11) NOT NULL,
+quantidade INT(11) NOT NULL,
+FOREIGN KEY(idproduto) REFERENCES produtos(idproduto) ON DELETE CASCADE ON UPDATE CASCADE,
+FOREIGN KEY(idpedido) REFERENCES produtos(idpedido) ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+CREATE TABLE log_produto(
+id_log INT(11) NOT NULL AUTO_INCREMENT,
+Tabela VARCHAR(45) NOT NULL, 
+Usuario VARCHAR(45) NOT NULL,
+Data_hora DATETIME NOT NULL,
+acao VARCHAR(45) NOT NULL,
+Dados VARCHAR(1000),
+PRIMARY KEY(id_log)
+);
+
+CREATE TABLE cupom(
+idcupom INT(11) NOT NULL AUTO_INCREMENT,
+nomecupom VARCHAR(60) NOT NULL,
+desconto INT(11) NOT NULL,
+PRIMARY KEY(idcupom)
+); 
