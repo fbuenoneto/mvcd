@@ -18,6 +18,22 @@ function index() {
     exibir("login/index");
 }
 
+function adicionar(){
+    if (ehPost()){
+        $nome = $_POST["usuario"];
+        $email = $_POST["email"];
+        $senha = $_POST["senha"];
+        $cpf = $_POST["cpf"];
+        $dataDeNascimento = $_POST["datadenascimento"];
+        $sexo = $_POST["sexo"];
+        $tipousuario = $_POST["tipousuario"];
+        
+        redirecionar("usuario/index");
+    }else{
+        exibir("login/index");
+    }
+}
+
 /** anon */
 function logout() {
     acessoDeslogar();
