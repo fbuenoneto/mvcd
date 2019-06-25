@@ -81,3 +81,10 @@ nomecupom VARCHAR(60) NOT NULL,
 desconto INT(11) NOT NULL,
 PRIMARY KEY(idcupom)
 ); 
+
+CREATE TABLE categoria(
+    idcategoria INT(11) NOT NULL AUTO_INCREMENT,
+    nome VARCHAR(60) NOT NULL,
+    descricao VARCHAR(60) NOT NULL,
+    PRIAMRY KEY(idcategoria)
+    );
