@@ -36,17 +36,25 @@ FOREIGN KEY(idusuario) REFERENCES usuario(idusuario) ON DELETE CASCADE ON UPDATE
 FOREIGN KEY(idendereco) REFERENCES endereco(idendereco) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
+CREATE TABLE categoria(
+    idcategoria INT(11) NOT NULL AUTO_INCREMENT,
+    nome VARCHAR(60) NOT NULL,
+    descricao VARCHAR(60) NOT NULL,
+    PRIAMRY KEY(idcategoria)
+    );
+
 CREATE TABLE produtos(
 idproduto INT(11) NOT NULL AUTO_INCREMENT,
+idcategoria INT(11) NOT NULL,
 preco DOUBLE NOT NULL,
 nomeproduto VARCHAR(30) NOT NULL,
 descricao VARCHAR(60) NOT NULL,
 tamanho VARCHAR(60) NOT NULL,
 imagem VARCHAR(60) NOT NULL,
-categoria VARCHAR(60) NOT NULL,
 estoque_minimo INT(11) NOT NULL,
 estoque_maximo INT(11) NOT NULL,
 PRIMARY KEY(idproduto)
+FOREIGN KEY(idcategoria) REFERENCES categoria(idcategoria) ON DELETE CASCADE ON UPDATE CASCADE 
 );
 
 CREATE TABLE estoque(
@@ -82,9 +90,3 @@ desconto INT(11) NOT NULL,
 PRIMARY KEY(idcupom)
 ); 
 
-CREATE TABLE categoria(
-    idcategoria INT(11) NOT NULL AUTO_INCREMENT,
-    nome VARCHAR(60) NOT NULL,
-    descricao VARCHAR(60) NOT NULL,
-    PRIAMRY KEY(idcategoria)
-    );

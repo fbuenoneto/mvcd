@@ -16,9 +16,11 @@ function adicionar() {
         $datadenascimento = $_POST["datadenascimento"];
         $sexo = $_POST["sexo"];
         $tipousuario = $_POST["tipousuario"];
-          
+        
         $msg = adicionarUsuario($nome, $email, $senha, $cpf, $datadenascimento, $sexo, $tipousuario);
-        echo $msg;
+        
+        
+        exibir("usuario/listar"); 
         
     } else {
         exibir("usuario/formulario");

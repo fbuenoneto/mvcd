@@ -11,12 +11,11 @@ body{
   width: 35px;
   height: 40px;
 }
-
 #cadastro {
     border-radius: 10%;
 }
-
-#login{
+ 
+.pro{
   color: black;
   border: solid;
   border-radius: 50px;
@@ -27,7 +26,6 @@ body{
   line-height: 40px;
   margin-bottom: 20px;
 }
-
 #geral{
   width: 100%;
   height: 100%;

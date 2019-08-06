@@ -1,0 +1,77 @@
+body{
+  font-family: 'Pacifico', cursive;
+}
+#mostrar{
+  display: none;
+}
+
+#passar_mouse:hover #mostrar{
+  display:block;
+}
+.topo{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0%;
+  width: auto;
+  height: auto;
+}
+#icone{
+  width: 20%;
+  border: solid;
+  border-radius: 100%;
+
+}
+ul li {
+  display: inline; 
+  padding: 15%;  
+}
+#um{
+  border-radius: 3%;
+  width: 15%;
+  margin: 1%;
+}
+#botão{
+  color: black;
+  border: solid black;
+  border-radius: 25px;
+  width: 30%;
+  height: 8%;
+  float: right;
+  text-align: center;
+  line-height: 10px;
+}
+.Donuts {
+  width: 80%;
+  padding-left: 10%;
+  height: 20%;
+}
+.primeiro{
+  border: solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.Bebidas{
+  width: 80%;
+  padding-left: 10%;
+  height: 20%;
+}
+.segundo{
+  border: solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.Outros{
+  width: 80%;
+  padding-left: 10%;
+  height: 20%;
+}
+.terceiro{
+  border: solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+

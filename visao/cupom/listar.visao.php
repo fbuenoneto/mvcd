@@ -19,4 +19,4 @@
     <?php endforeach; ?>
 </table>
 
-<a href="./usuario/adicionar" class="btn btn-primary">Adicionar novo Cupom</a>
+<a href="./cupom/adicionar" class="btn btn-primary">Adicionar novo Cupom</a>
