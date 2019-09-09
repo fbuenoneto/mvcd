@@ -7,10 +7,10 @@
     <p>Tamanho: <input type="text" name="tamanho" value="<?=@$produto['tamanho']?>"></p>
     <p>Imagem: <input type="text" name="imagem" value="<?=@$produto['imagem']?>"></p>
     <p>Categorias: 
-        <select name="categoria">
+        <select name="categorias">
 		<option value="default">Selecione uma categoria</option>
 		
-		<?php foreach ($categoria as $categoria):?>
+		<?php foreach ($categorias as $categoria):?>
 			<option value="<?=$categoria["idcategoria"]?>"><?=$categoria["nome"]?></option>
 		<?php endforeach;?>
 	</select><br></p>

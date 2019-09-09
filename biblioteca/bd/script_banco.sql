@@ -40,7 +40,7 @@ CREATE TABLE categoria(
     idcategoria INT(11) NOT NULL AUTO_INCREMENT,
     nome VARCHAR(60) NOT NULL,
     descricao VARCHAR(60) NOT NULL,
-    PRIAMRY KEY(idcategoria)
+    PRIMARY KEY(idcategoria)
     );
 
 CREATE TABLE produtos(
@@ -53,7 +53,7 @@ tamanho VARCHAR(60) NOT NULL,
 imagem VARCHAR(60) NOT NULL,
 estoque_minimo INT(11) NOT NULL,
 estoque_maximo INT(11) NOT NULL,
-PRIMARY KEY(idproduto)
+PRIMARY KEY(idproduto),
 FOREIGN KEY(idcategoria) REFERENCES categoria(idcategoria) ON DELETE CASCADE ON UPDATE CASCADE 
 );
 
