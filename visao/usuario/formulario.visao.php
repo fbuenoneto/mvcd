@@ -1,3 +1,12 @@
+<?php 
+     if(ehPost()){
+         foreach($errors as $erro){
+             echo "$erro<br>";
+         }
+     }
+?>
+
+
 <h1>Bem Vindo!</h1>
 
  <link rel="stylesheet" href="style.css">

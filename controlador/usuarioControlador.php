@@ -19,12 +19,46 @@ function adicionar() {
         
         $msg = adicionarUsuario($nome, $email, $senha, $cpf, $datadenascimento, $sexo, $tipousuario);
         
+        $errors = array(); 
         
-        exibir("usuario/listar"); 
+        if(strlen(trim($email)) == 0) {
+            $errors[] = "Você deve inserir um e-mail.";
+        }else {
+            if(filter_var($email, FILTER_VALIDATE_EMAIL) == false){
+                $errors[] = "Inserir um e-mail válido.";
+            }
+        }
         
+        if(strlen(trim($cpf))== 0){
+            $errors[] = "Você deve inserir um cpf.";
+        }else{
+        if(filter_var($cpf, FILTER_VALIDATE_EMAIL) == false){
+            $errors[] = "Inserir um cpf válido.";
+    }
+  }
+         
+       if (count($errors)> 0 ){
+           $dados = array(); 
+           $dados["errors"] = $errors;
     } else {
+        $msg = adicionarUsario($email); 
+        redirecionar("usuario/ListarTodosUsuarios"); 
+    }
+    
+    
+  if (count($errors) > 0){
+      $dados = array();
+      $dados["errors"] = $errors;
+      exibir("usuario/formulario", $dados);
+  }else{
+      $msg = adicionarUsuario($cpf);
+      redirecionar("usuario/ListarTodosUsuarios");
+  }
+    
+ }else{
         exibir("usuario/formulario");
     }
+    
 }
 
 function deletar($id) {
