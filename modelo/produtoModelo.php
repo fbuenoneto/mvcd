@@ -1,9 +1,12 @@
 <?php
 
-function adicionarProduto($preco,$nome, $descricao, $tamanho, $imagem, $categoria, $estoqueminimo, $estoquemaximo) {
-    $sql = "INSERT INTO produtos (preco,nomeproduto,descricao,tamanho,imagem,categoria,estoque_minimo,estoque_maximo) VALUES ('$preco','$nome', '$descricao', '$tamanho', '$imagem', '$categoria', '$estoqueminimo', '$estoquemaximo')";
+function adicionarProduto($preco, $nome, $descricao, $tamanho, $imagem, $categoria, $estoqueminimo, $estoquemaximo) {
+    $sql = "INSERT INTO produtos (preco,nomeproduto,descricao,tamanho,idcategoria,imagem,estoque_minimo,estoque_maximo) "
+            . "VALUES ('$preco','$nome', '$descricao', '$tamanho','$categoria', '$imagem', '$estoqueminimo', '$estoquemaximo')";
+    
+   echo $sql; 
     $resultado = mysqli_query($cnx = conn(), $sql);
-    if(!$resultado) { die('Erro ao cadastrar usuário' . mysqli_error($cnx)); }
+    if(!$resultado) { die('Erro ao cadastrar produto' . mysqli_error($cnx)); }
     return 'Produto cadastrado com sucesso!';
 }
 
@@ -31,3 +34,4 @@ function deletarProduto($idproduto) {
     return 'Produto deletado com sucesso!';
             
 }
+

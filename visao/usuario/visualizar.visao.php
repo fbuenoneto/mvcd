@@ -6,4 +6,4 @@
 <p>cpf: <?=$usuario['cpf']?></p>
 <p>data de nascimento: <?=$usuario['datadenascimento']?></p>
 
-<p><a href="./usuario/ListarTodosUsuarios" class="btn btn-danger">Voltar</a></p>
+<p><a href="./usuario/ListarTodosUsuarios" style="text-decoration:none; color: black" class="btn btn-danger">Voltar</a></p>

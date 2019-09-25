@@ -16,12 +16,12 @@
         <td><?=$usuario['idusuario']?></td>
         <td><?=$usuario['nomeusuario']?></td>
         <td><?=$usuario['email']?></td>
-        <td><a href="./usuario/visualizar/<?=$usuario['idusuario']?>" class="btn btn-secondary">view</a></td>
-        <td><a href="./usuario/editar/<?=$usuario['idusuario']?>" class="btn btn-info">edit</a></td>
-        <td><a href="./usuario/deletar/<?=$usuario['idusuario']?>" class="btn btn-danger">del</a></td>
+        <td><a href="./usuario/visualizar/<?=$usuario['idusuario']?>" style="text-decoration:none; color: inherit" class="btn btn-secondary" class="btn btn-secondary">Detalhar</a></td>
+        <td><a href="./usuario/editar/<?=$usuario['idusuario']?>" style="text-decoration:none; color: inherit" class="btn btn-secondary" class="btn btn-info">Editar</a></td>
+        <td><a href="./usuario/deletar/<?=$usuario['idusuario']?>" style="text-decoration:none; color: inherit" class="btn btn-secondary" class="btn btn-danger">Deletar</a></td>
     </tr>
     <?php endforeach; ?>
 </table>
 
-<a href="./usuario/adicionar" class="btn btn-primary">Adicionar novo usuario</a>
+<a href="./usuario/adicionar" style="text-decoration:none; color: inherit" class="btn btn-secondary" class="btn btn-primary">Adicionar novo usuario</a>
 

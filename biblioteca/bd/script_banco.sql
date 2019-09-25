@@ -70,7 +70,7 @@ idproduto INT(11) NOT NULL,
 idpedido INT(11) NOT NULL,
 quantidade INT(11) NOT NULL,
 FOREIGN KEY(idproduto) REFERENCES produtos(idproduto) ON DELETE CASCADE ON UPDATE CASCADE,
-FOREIGN KEY(idpedido) REFERENCES produtos(idpedido) ON DELETE CASCADE ON UPDATE CASCADE
+FOREIGN KEY(idpedido) REFERENCES pedido(idpedido) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
 CREATE TABLE log_produto(
@@ -90,3 +90,8 @@ desconto INT(11) NOT NULL,
 PRIMARY KEY(idcupom)
 ); 
 
+CREATE TABLE formaPagamento(
+idForma INT(11) NOT NULL AUTO_INCREMENT,
+descricao VARCHAR(60) NOT NULL,
+PRIMARY KEY(idForma)
+);

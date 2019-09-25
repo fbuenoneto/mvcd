@@ -13,10 +13,10 @@
         <td><?=$cupom['idcupom']?></td>
         <td><?=$cupom['nomecupom']?></td>
         <td><?=$cupom['desconto']?></td>
-        <td><a href="./cupom/editar/<?=$cupom['idcupom']?>" class="btn btn-info">edit</a></td>
-        <td><a href="./cupom/deletar/<?=$cupom['idcupom']?>" class="btn btn-danger">del</a></td>
+        <td><a href="./cupom/editar/<?=$cupom['idcupom']?>" style="text-decoration:none; color: inherit" class="btn btn-secondary" class="btn btn-info">Editar</a></td>
+        <td><a href="./cupom/deletar/<?=$cupom['idcupom']?>" style="text-decoration:none; color: inherit" class="btn btn-secondary" class="btn btn-danger">Deletar</a></td>
     </tr>
     <?php endforeach; ?>
 </table>
 
-<a href="./cupom/adicionar" class="btn btn-primary">Adicionar novo Cupom</a>
+<a href="./cupom/adicionar" style="text-decoration:none; color: inherit" class="btn btn-secondary" class="btn btn-primary">Adicionar novo Cupom</a>

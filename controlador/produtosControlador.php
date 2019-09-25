@@ -25,7 +25,8 @@ function adicionar() {
         $estoquemaximo = $_POST["estoquemaximo"];
           
         $msg = adicionarProduto($preco, $nome, $descricao, $tamanho, $imagem, $categoria, $estoqueminimo, $estoquemaximo);
-        echo $msg;
+        
+        redirecionar("produtos/ListarTodosProdutos");
         
     } else {
         $categorias = array();
@@ -43,7 +44,7 @@ function editar($idproduto) {
         $descricao = $_POST["descricao"];
         $tamanho = $_POST["tamanho"];
         $imagem = $_POST["imagem"];
-        $categoria = $_POST["categoria"];
+        $categoria = $_POST["nome"];
         $estoqueminimo = $_POST["estoqueminimo"];
         $estoquemaximo = $_POST["estoquemaximo"];
         

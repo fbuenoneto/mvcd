@@ -8,7 +8,8 @@ function adicionar() {
         $descricao = $_POST["descricao"];
           
         $msg = adicionarCategoria($nome,$descricao);
-        echo $msg;
+        
+        redirecionar("categorias/ListarTodaCategoria",$msg);
         
     } else {
         exibir("categoria/categoria");
