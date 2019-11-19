@@ -10,14 +10,14 @@ function index() {
         
         if (acessoLogar($usuario)) {
             alert("bem vindo" . $login);
-            redirecionar("usuario");
+            redirecionar("paginas");
         } else {
             alert("usuario ou senha invalidos!");
         }
     }
     exibir("login/index");
 }
-
+/** anon */
 function adicionar(){
     if (ehPost()){
         $nome = $_POST["usuario"];
@@ -28,7 +28,7 @@ function adicionar(){
         $sexo = $_POST["sexo"];
         $tipousuario = $_POST["tipousuario"];
         
-        redirecionar("usuario/index");
+        redirecionar("usuario/visualizar");
     }else{
         exibir("login/index");
     }

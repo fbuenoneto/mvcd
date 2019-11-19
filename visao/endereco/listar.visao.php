@@ -1,8 +1,22 @@
-<?php
+<h2>Listar todos os Enderecos de <?=$usuario['nome']?></h2>
 
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>NOME</th>
+            <th>DESCONTO</th>
+        </tr>
+    </thead>
+    <?php foreach ($cupom as $cupom): ?>
+    <tr>
+        <td><?=$cupom['idcupom']?></td>
+        <td><?=$cupom['nomecupom']?></td>
+        <td><?=$cupom['desconto']?></td>
+        <td><a href="./cupom/editar/<?=$cupom['idcupom']?>" style="text-decoration:none; color: inherit" class="btn btn-secondary" class="btn btn-info">Editar</a></td>
+        <td><a href="./cupom/deletar/<?=$cupom['idcupom']?>" style="text-decoration:none; color: inherit" class="btn btn-secondary" class="btn btn-danger">Deletar</a></td>
+    </tr>
+    <?php endforeach; ?>
+</table>
 
+<a href="./cupom/adicionar" style="text-decoration:none; color: inherit">Adicionar novo Endereco</a>

@@ -3,30 +3,28 @@
 <table class="table">
     <thead>
         <tr>
-            <th>NOME</th>
-            <th>PREÇO</th>
-            <th>DESCRIÇÃO</th>
-            <th>DELETAR </th>
+            <th>Nome</th>
+            <th>Preço</th>
+            <th>Descrição</th>
+            <th>Deletar</th>
         </tr>
     </thead>
+    
     <?php 
-    $soma = 0;
-    foreach ($produtos as $produto): 
-        
-     $soma = $soma + $produto['preco']; ?>
+    foreach ($produtos as $produto):
+    ?> 
     
     <tr>
         <td><?=$produto['nomeproduto']?></td>
         <td><?=$produto['preco']?></td>
         <td><?=$produto['descricao']?></td>
-        <td><a href="./carrinhoCompra/tirar/<?=$produto['idproduto']?>" style="text-decoration:none; color: inherit" class="btn btn-secondary" class="btn btn-danger">Deletar</a></td>
+        <td><a href="./carrinhoCompra/tirar/<?=$produto['idproduto']?>" style="text-decoration:none; color: inherit">Deletar</a></td>
     </tr>
-    
+       
     <?php endforeach; ?>
- 
+    
 </table>
-
-<p>Total: <?php
-echo $soma; ?></p>
-<a href="./produtos/ListarTodosProdutos" style="text-decoration:none; color: inherit" class="btn btn-secondary" class="btn btn-primary">Continuar Comprando</a>
+<p>Total: R$<?=$total?></p>
+<p><a href="./pedido/" style="text-decoration:none; color: inherit">Finalizar Pedido</a></p>
+<a href="./produtos/ListarTodosProdutos" style="text-decoration:none; color: inherit">Continuar Comprando</a>
 

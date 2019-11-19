@@ -19,4 +19,4 @@
     <?php endforeach; ?>
 </table>
 
-<a href="./cupom/adicionar" style="text-decoration:none; color: inherit" class="btn btn-secondary" class="btn btn-primary">Adicionar novo Cupom</a>
+<a href="./cupom/adicionar" style="text-decoration:none; color: inherit">Adicionar novo Cupom</a>

@@ -24,15 +24,8 @@
     <input type="radio" name="sexo" value="M">Masculino<br> 
     <input type="radio" name="sexo" value="F" checked="checked">Feminino<br>
     <?php endif;?>
-    
-    <p>Tipo de usuario:<br>
-    <?php if(isset($usuario) && $usuario ['tipousuario']=="P"):?>
-    <input type="radio" name="tipousuario" value="P" checked="checked">Usuário Padrão<br>
-    <input type="radio" name="tipousuario" value="A">Administrador<br>
-    <?php else:?>
-    <input type="radio" name="tipousuario" value="P">Usuário Padrão<br> 
-    <input type="radio" name="tipousuario" value="A" checked="checked">Administrador<br>
-    <?php endif;?></p>
+    <br>
+        
     
     <button type="submit">Enviar</button>
 </form>

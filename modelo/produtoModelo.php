@@ -1,7 +1,17 @@
 <?php
 
+function pegarProdutoPorNome($nome){
+    $sql = "SELECT * FROM produtos where nomeproduto like '%$nome%'";
+    $resultado = mysqli_query(conn(), $sql);
+    $produtos = array();
+    while ($linha = mysqli_fetch_assoc($resultado)) {
+        $produtos[] = $linha;
+    }
+    return $produtos;
+}
+
 function adicionarProduto($preco, $nome, $descricao, $tamanho, $imagem, $categoria, $estoqueminimo, $estoquemaximo) {
-    $sql = "INSERT INTO produtos (preco,nomeproduto,descricao,tamanho,idcategoria,imagem,estoque_minimo,estoque_maximo) "
+    $sql = "INSERT INTO produtos (preco,nomeproduto,descricao,tamanho,categoria,imagem,estoque_minimo,estoque_maximo) "
             . "VALUES ('$preco','$nome', '$descricao', '$tamanho','$categoria', '$imagem', '$estoqueminimo', '$estoquemaximo')";
     
    echo $sql; 
@@ -35,3 +45,12 @@ function deletarProduto($idproduto) {
             
 }
 
+//Função de pesquisa quem sabe
+//function pegarProdutoPorId($idproduto) {
+    //$sql = "SELECT produtos.*, categoria.nome FROM produtos"
+            //. "inner join categoria on produtos.idcategoria=categoria.idcategoria"
+            //. "WHERE idproduto= $idproduto";
+    //$resultado = mysqli_query(conn(), $sql);
+    //$produtos = mysqli_fetch_assoc($resultado);
+    //return $produtos;
+//}

@@ -11,7 +11,7 @@
 		<option value="default">Selecione uma categoria</option>
 		
 		<?php foreach ($categorias as $categoria):?>
-			<option value="<?=$categoria["idcategoria"]?>"><?=$categoria["nome"]?></option>
+                    <option value="<?=$categoria["idcategoria"]?>"><?=$categoria["nome"]?></option>
 		<?php endforeach;?>
 	</select><br></p>
     <p>Estoque Mínimo: <input type="text" name="estoqueminimo" value="<?=@$produto['estoqueminimo']?>"></p>

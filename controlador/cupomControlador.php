@@ -2,6 +2,7 @@
 
 require_once "modelo/cupomModelo.php";
 
+/** A */
 function adicionar() {
     if (ehPost()) {
         $nome = $_POST["nome"];
@@ -14,12 +15,13 @@ function adicionar() {
         exibir("cupom/cupom");
     }
 }
-
+/** A */
 function ListarTodosCupons() {
     $dados["cupom"] = pegarTodosCupons();
     exibir("cupom/listar", $dados);
 }
 
+/** A */
 function editar($idcupom) {
     if (ehPost()) {
         $nome = $_POST["nome"];

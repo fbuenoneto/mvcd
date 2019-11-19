@@ -1,9 +1,9 @@
 <?php
 
 
-function adicionarEndereco($logradouro,$numero,$complemento,$bairro,$cidade,$cep) {
-    $sql = "INSERT INTO endereco (logradouro,numero,complemento,bairro,cidade,cep) "
-            . "VALUES ('$logradouro','$numero','$complemento','$bairro','$cidade','$cep')";
+function adicionarEndereco($idusuario,$logradouro,$numero,$complemento,$bairro,$cidade,$cep) {
+    $sql = "INSERT INTO endereco (idusuario,logradouro,numero,complemento,bairro,cidade,cep) "
+            . "VALUES ('$idusuario','$logradouro','$numero','$complemento','$bairro','$cidade','$cep')";
     
    echo $sql; 
     $resultado = mysqli_query($cnx = conn(), $sql);
@@ -21,8 +21,8 @@ function pegarTodosEnderecos() {
     return $enderecos;
 }
 
-function pegarEnderecoPorId($idendereco) {
-    $sql = "SELECT * FROM endereco WHERE idendereco = $idendereco";
+function pegarEnderecoPorId($idusuario) {
+    $sql = "SELECT * FROM endereco WHERE idusuario = $idusuario";
     $resultado = mysqli_query(conn(), $sql);
     $enderecos = mysqli_fetch_assoc($resultado);
     return $enderecos;

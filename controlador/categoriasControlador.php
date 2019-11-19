@@ -2,6 +2,7 @@
 
 require_once 'modelo/categoriaModelo.php';
 
+/** A */
 function adicionar() {
     if (ehPost()) {
         $nome = $_POST["nome"];
@@ -16,12 +17,12 @@ function adicionar() {
     }
 }
 
-
+/** A */
 function ListarTodaCategoria() {
     $dados["categoria"] = pegarTodasCategorias();
     exibir("categoria/listar", $dados);
 }
-
+/** A */
 function deletar($idcategoria) {
     deletarCategoria($idcategoria);
     redirecionar("categorias/ListarTodaCategoria");

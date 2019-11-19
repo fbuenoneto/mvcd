@@ -1,5 +1,7 @@
 <?php
 require_once "modelo/formaPagamentoModelo.php";
+
+/** A */
 function adicionar() {
     if (ehPost()) {
         $descricao = $_POST["descricao"];
@@ -11,10 +13,14 @@ function adicionar() {
         exibir("formaPagamento/formulario"); // como você tiver salvo sua pasta e visão, aconselho assim 
     }
 }
+
+/** A */
 function ListarTodasFormas() {
     $dados["formas"] = pegarTodasFormas();
     exibir("formaPagamento/listar", $dados);
 }
+
+/** A */
 function editar($idForma) {
     if (ehPost()) {
         $descricao = $_POST["descricao"];
@@ -27,6 +33,7 @@ function editar($idForma) {
     }
 }
 
+/** A */
 function deletar($idForma) {
     deletarForma($idForma);
     redirecionar("formaPagamento/ListarTodasFormas");

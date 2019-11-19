@@ -6,7 +6,7 @@ function adicionarFormaPagamento($descricao) {
     return 'Forma de pagamento cadastrada com sucesso!';
 }
 function pegarTodasFormas() {
-    $sql = "SELECT * FROM formaPagamento";
+    $sql = "SELECT * FROM formapagamento";
     $resultado = mysqli_query(conn(), $sql);
     $formas = array();
     while ($linha = mysqli_fetch_assoc($resultado)) {
@@ -15,20 +15,20 @@ function pegarTodasFormas() {
     return $formas;
 }
 function editarForma($idForma,$descricao) {
-    $sql = "UPDATE formapagamento SET descricao = '$descricao' WHERE idFormaPagamento = '$idForma'";
+    $sql = "UPDATE formapagamento SET descricao = '$descricao' WHERE idForma = '$idForma'";
     $resultado = mysqli_query($cnx = conn(), $sql);
     if(!$resultado) { die('Erro ao alterar forma de pagamento' . mysqli_error($cnx)); }
     return 'Forma de pagamento alterado com sucesso!';
 }
 function pegarFormaPorId($idForma) {
-    $sql = "SELECT * FROM formaPagamento WHERE idFormaPagamento = $idForma";
+    $sql = "SELECT * FROM formaPagamento WHERE idForma = $idForma";
     $resultado = mysqli_query(conn(), $sql);
     $formas = mysqli_fetch_assoc($resultado);
     return $formas;
 }
 
 function deletarForma($idForma) {
-    $sql = "DELETE FROM formaPagamento WHERE idFormaPagamento = $idForma";
+    $sql = "DELETE FROM formaPagamento WHERE idForma = $idForma";
     $resultado = mysqli_query($cnx = conn(), $sql);
     if(!$resultado) { die('Erro ao deletar forma de pagamento' . mysqli_error($cnx)); }
     return 'Forma de Pagamento deletada com sucesso!';

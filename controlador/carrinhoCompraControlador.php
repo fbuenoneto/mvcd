@@ -1,20 +1,28 @@
 <?php
 require_once "modelo/produtoModelo.php";
+
 function comprar($idProduto) {   
     $_SESSION["carrinho"][] = $idProduto;
     redirecionar("./carrinhoCompra/exibirCarrinho");
 }
+
+/** anon */ 
+
 function exibirCarrinho() {
     $listaDeProdutos= array();
     
+    $soma = 0;
     for($i=0; $i<count($_SESSION["carrinho"]); $i++){
-        $id=$_SESSION["carrinho"][$i];
+        $id = $_SESSION["carrinho"][$i];
         $produto = pegarProdutoPorId($id);
+        $soma += $produto["preco"];
         $listaDeProdutos[]=$produto;
     }
+    $dados["total"] = $soma;
     $dados["produtos"] = $listaDeProdutos;
     exibir("carrinho/carrinho", $dados);
 }
+/** anon */
 
 function tirar($idProduto) {        
     for ($i=0;$i<=count($_SESSION["carrinho"]);$i++){
@@ -28,6 +36,7 @@ function tirar($idProduto) {
     
     redirecionar("./carrinhoCompra/exibirCarrinho");
 }
+/** anon */
 
 function desconto(){
     
