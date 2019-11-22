@@ -1,22 +1,32 @@
-<h2>Listar todos os Enderecos de <?=$usuario['nome']?></h2>
+<h2>Listar todos os Enderecos Cadastrados</h2>
 
 <table class="table">
     <thead>
         <tr>
-            <th>ID</th>
-            <th>NOME</th>
-            <th>DESCONTO</th>
+            <th>IdEndereco</th>
+            <th>IdUsuario</th>
+            <th>logradouro</th>
+            <th>numero</th>
+            <th>complemento</th>
+            <th>bairro</th>
+            <th>cidade</th>
+            <th>cep</th>
         </tr>
     </thead>
-    <?php foreach ($cupom as $cupom): ?>
+    <?php foreach ($dados as $end): ?>
     <tr>
-        <td><?=$cupom['idcupom']?></td>
-        <td><?=$cupom['nomecupom']?></td>
-        <td><?=$cupom['desconto']?></td>
-        <td><a href="./cupom/editar/<?=$cupom['idcupom']?>" style="text-decoration:none; color: inherit" class="btn btn-secondary" class="btn btn-info">Editar</a></td>
-        <td><a href="./cupom/deletar/<?=$cupom['idcupom']?>" style="text-decoration:none; color: inherit" class="btn btn-secondary" class="btn btn-danger">Deletar</a></td>
+       <td><?=$end['idendereco']?></td>
+       <td><?=$end['idusuario']?></td>
+       <td><?=$end['logradouro']?></td>
+       <td><?=$end['numero']?></td>
+       <td><?=$end['complemento']?></td>
+       <td><?=$end['bairro']?></td>
+       <td><?=$end['cidade']?></td>
+       <td><?=$end['cep']?></td>
+        <td><a href="./endereco/editar/<?=$end['idendereco']?>" style="text-decoration:none; color: inherit" class="btn btn-secondary" class="btn btn-info">Editar</a></td>
+        <td><a href="./endereco/deletar/<?=$end['idendereco']?>" style="text-decoration:none; color: inherit" class="btn btn-secondary" class="btn btn-danger">Deletar</a></td>
     </tr>
     <?php endforeach; ?>
 </table>
 
-<a href="./cupom/adicionar" style="text-decoration:none; color: inherit">Adicionar novo Endereco</a>
+<a href="./endereco/adicionar/" style="text-decoration:none; color: inherit">Adicionar novo Endereco</a>

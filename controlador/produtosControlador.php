@@ -35,7 +35,7 @@ function adicionar() {
         $estoqueminimo = $_POST["estoqueminimo"];
         $estoquemaximo = $_POST["estoquemaximo"];
           
-        $msg = adicionarProduto($preco, $nome, $descricao, $tamanho, $imagem, $categoria, $estoqueminimo, $estoquemaximo);
+        $msg = adicionarProduto( $categoria, $preco, $nome, $descricao, $tamanho, $imagem, $estoqueminimo, $estoquemaximo);
         
         redirecionar("produtos/ListarTodosProdutos");
         

@@ -1,6 +1,6 @@
 <?php
 require_once "modelo/enderecoModelo.php";
-
+require_once "modelo/usuarioModelo.php";
 
 /** anon */
 function adicionar($id) {
@@ -26,8 +26,9 @@ function ListarTodosEnderecos() {
     exibir("endereco/listar", $dados);
 }
 
-function ListarTodosEnderecosPorId() {
-    $dados["endereco"] = pegarEnderecoPorId();
+function ListarTodosEnderecosPorId($idusuario) {
+    $dados["idusuario"] = pegarEnderecoPorId($idusuario);
+    print_r($dados);
     exibir("endereco/listar", $dados);
 }
 

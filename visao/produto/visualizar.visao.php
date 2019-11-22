@@ -13,7 +13,7 @@
             <p>Preço: <?=$produtos['preco']?></p>
             <p>Descrição: <?=$produtos['descricao']?></p>
             <p>Tamanho: <?=$produtos['tamanho']?></p>
-            <p>Categoria: <?=$produtos['categoria']?></p>
+            <p>Categoria: <?=$produtos['idcategoria']?></p>
             <p>Estoque mínimo: <?=$produtos['estoque_minimo']?></p>
             <p>Estoque máximo: <?=$produtos['estoque_maximo']?></p>
             <p><a href="./carrinhoCompra/comprar/<?=$produtos['idproduto']?>" style="text-decoration:none; color: black" class="btn btn-danger">Comprar Item</a></p>

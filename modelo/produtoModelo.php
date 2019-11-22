@@ -10,9 +10,9 @@ function pegarProdutoPorNome($nome){
     return $produtos;
 }
 
-function adicionarProduto($preco, $nome, $descricao, $tamanho, $imagem, $categoria, $estoqueminimo, $estoquemaximo) {
-    $sql = "INSERT INTO produtos (preco,nomeproduto,descricao,tamanho,categoria,imagem,estoque_minimo,estoque_maximo) "
-            . "VALUES ('$preco','$nome', '$descricao', '$tamanho','$categoria', '$imagem', '$estoqueminimo', '$estoquemaximo')";
+function adicionarProduto($categoria, $preco, $nome, $descricao, $tamanho, $imagem,  $estoqueminimo, $estoquemaximo) {
+    $sql = "INSERT INTO produtos (idcategoria, preco,nomeproduto,descricao,tamanho,imagem,estoque_minimo,estoque_maximo) "
+            . "VALUES ('$categoria','$preco','$nome', '$descricao', '$tamanho', '$imagem', '$estoqueminimo', '$estoquemaximo')";
     
    echo $sql; 
     $resultado = mysqli_query($cnx = conn(), $sql);
