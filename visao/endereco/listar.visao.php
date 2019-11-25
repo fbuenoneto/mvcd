@@ -1,5 +1,6 @@
 <h2>Listar todos os Enderecos Cadastrados</h2>
 
+
 <table class="table">
     <thead>
         <tr>
@@ -13,7 +14,7 @@
             <th>cep</th>
         </tr>
     </thead>
-    <?php foreach ($dados as $end): ?>
+    <?php foreach ($endereco as $end): ?>
     <tr>
        <td><?=$end['idendereco']?></td>
        <td><?=$end['idusuario']?></td>
@@ -26,7 +27,9 @@
         <td><a href="./endereco/editar/<?=$end['idendereco']?>" style="text-decoration:none; color: inherit" class="btn btn-secondary" class="btn btn-info">Editar</a></td>
         <td><a href="./endereco/deletar/<?=$end['idendereco']?>" style="text-decoration:none; color: inherit" class="btn btn-secondary" class="btn btn-danger">Deletar</a></td>
     </tr>
-    <?php endforeach; ?>
+    
 </table>
 
-<a href="./endereco/adicionar/" style="text-decoration:none; color: inherit">Adicionar novo Endereco</a>
+<a href="./endereco/adicionar/<?=$end['idusuario']?>" style="text-decoration:none; color: inherit">Adicionar novo Endereco</a>
+
+<?php endforeach; ?>

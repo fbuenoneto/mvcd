@@ -22,9 +22,12 @@ function pegarTodosEnderecos() {
 }
 
 function pegarEnderecoPorId($idusuario) {
-    $sql = "SELECT * FROM endereco WHERE idusuario = $idusuario";
+    $sql = "SELECT * FROM endereco WHERE idusuario = '$idusuario'";
     $resultado = mysqli_query(conn(), $sql);
-    $enderecos = mysqli_fetch_assoc($resultado);
+    $enderecos = array();
+    while ($linha = mysqli_fetch_assoc($resultado)) {
+        $enderecos[] = $linha;
+    }
     return $enderecos;
 }
 

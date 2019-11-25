@@ -27,8 +27,7 @@ function ListarTodosEnderecos() {
 }
 
 function ListarTodosEnderecosPorId($idusuario) {
-    $dados["idusuario"] = pegarEnderecoPorId($idusuario);
-    print_r($dados);
+    $dados["endereco"] = pegarEnderecoPorId($idusuario);
     exibir("endereco/listar", $dados);
 }
 

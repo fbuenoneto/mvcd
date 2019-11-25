@@ -2,6 +2,7 @@
 require_once("modelo/formaPagamentoModelo.php");
 require_once("modelo/produtoModelo.php");
 require_once("modelo/PedidoModelo.php");
+require_once("modelo/enderecoModelo.php");
 
 function index(){
     redirecionar("pedido/adicionar");
@@ -26,6 +27,8 @@ function adicionar(){
     $formas = array();
     $formas = pegarTodasFormas();
     $carro = $_SESSION["carrinho"];
+    $idUsuario = acessoPegarIdUsuarioLogado();
+    $rua = pegarTodosEnderecos($idUsuario); 
     
     $soma = 0;
     for($i=0; $i<count($_SESSION["carrinho"]); $i++){
@@ -37,16 +40,8 @@ function adicionar(){
     $dados["total"] = $soma;    
     $dados["formas"] = $formas;
     $dados["carrinho"] = $carro;
+    $dados["endereco"] = $rua;
     exibir("pedido/pedido", $dados);
     } 
 }
 
-
-//function salvar(){
-     //$endereco = $_POST["endereco"];
-     //$cupom = $_POST["cupom"];
-     //$preco = $_POST["preco"];
-     //$carrinho = $_SESSION["carrinho"];
-
- 
-//}

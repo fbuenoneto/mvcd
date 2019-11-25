@@ -3,7 +3,7 @@
         <title>Donuts Café</title>
         <base href="<?= URL_BASE ?>"><!--Esta instrução é super importante e não deve ser mudada!-->
             
-        <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+        <!--<link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">-->
         <link rel="stylesheet" href="./publico/css/inicial.css" style="text-decoration:none">
     </head>
     <body class="container">
