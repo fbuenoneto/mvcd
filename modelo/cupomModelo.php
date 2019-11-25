@@ -30,3 +30,11 @@ function pegarCupomPorId($idcupom) {
     $cupom = mysqli_fetch_assoc($resultado);
     return $cupom;
 }
+
+function deletarCupom($idcupom) {
+    $sql = "DELETE FROM cupom WHERE idcupom = $idcupom";
+    $resultado = mysqli_query($cnx = conn(), $sql);
+    if(!$resultado) { die('Erro ao deletar forma de pagamento' . mysqli_error($cnx)); }
+    return 'Forma de Pagamento deletada com sucesso!';
+            
+}

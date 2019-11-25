@@ -9,7 +9,8 @@ function adicionar() {
         $desconto = $_POST["desconto"];
           
         $msg = adicionarCupom($nome,$desconto);
-        echo $msg;
+        
+        redirecionar("cupom/ListarTodosCupons");
         
     } else {
         exibir("cupom/cupom");
@@ -19,6 +20,11 @@ function adicionar() {
 function ListarTodosCupons() {
     $dados["cupom"] = pegarTodosCupons();
     exibir("cupom/listar", $dados);
+}
+
+function deletar($idcupom){
+    deletarCupom($idcupom);
+    redirecionar("cupom/ListarTodosCupons");
 }
 
 /** A */

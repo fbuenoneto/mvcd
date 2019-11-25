@@ -16,7 +16,7 @@ function adicionar() {
         $cpf = $_POST["cpf"];
         $datadenascimento = $_POST["datadenascimento"];
         $sexo = $_POST["sexo"];
-        $tipousuario = "A";
+        $tipousuario = "p";
         
         $msg = adicionarUsuario($nome, $email, $senha, $cpf, $datadenascimento, $sexo, $tipousuario);
         

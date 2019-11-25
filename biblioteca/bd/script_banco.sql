@@ -95,3 +95,6 @@ idForma INT(11) NOT NULL AUTO_INCREMENT,
 descricao VARCHAR(60) NOT NULL,
 PRIMARY KEY(idForma)
 );
+
+INSERT INTO usuario (nomeusuario,email,senha,cpf,datadenascimento,sexo,tipousuario) 
+VALUES ('Francisco','fbuenoneto@hotmail.com','admin','435.800.168-81','20/03/2002','M','A');
