@@ -15,15 +15,29 @@ function finalizar(){
 }
 
 function adicionar(){
-    if(ehPost()){
+    if(ehPost()){     
+        
+     $soma = 0;
+    for($i=0; $i<count($_SESSION["carrinho"]); $i++){
+        $id = $_SESSION["carrinho"][$i];
+        $produto = pegarProdutoPorId($id);
+        $soma += $produto["preco"];
+        $listaDeProdutos[]=$produto;
+    }
+    
+     $idUsuario = acessoPegarIdUsuarioLogado();
      $FormaP = $_POST["formaP"];
      $endereco = $_POST["endereco"];
      $Cupom = $_POST["cupom"];
-     $Preco = $_POST["carrinho"];
+     $Preco = $soma;
     
-     adicionarPedido($FormaP,$endereco,$Cupom,$Preco);
+     print_r($idUsuario);
      
-    }else{
+     $msg = adicionarPedido($idUsuario,$FormaP,$endereco,$Cupom,$Preco);
+     echo $msg;
+    }
+    
+    else{
     $formas = array();
     $formas = pegarTodasFormas();
     $carro = $_SESSION["carrinho"];

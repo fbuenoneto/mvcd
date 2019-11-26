@@ -1,10 +1,10 @@
 <?php 
 
-function adicionarPedido(){
-    $sql = "INSERT INTO pedido(idusuario, idendereco, datacompra) VALUES ('$dusuario, $idendereco, $datacompra')";
-         $resultado = mysqli_query($cnx = conn(), $sql);
-        if(!$resultado) { die('Erro ao cadastrar forma de pagamento' . mysqli_error($cnx)); }
-    return 'Pedido cadastrado com sucesso!';
+function adicionarPedido($idUsuario,$FormaP,$endereco,$Cupom,$Preco){
+    $sql = "INSERT INTO pedido(idusuario, idendereco, FormaPagamento, Cupom, Preco) VALUES ('$idUsuario','$endereco','$FormaP','$Cupom','$Preco')";
+    $resultado = mysqli_query($cnx = conn(), $sql);
+        if(!$resultado) { die('Erro ao cadastrar' . mysqli_error($cnx)); }
+    return 'Cadastrado com sucesso!';
 }
 
 function salvar(){

@@ -22,6 +22,11 @@ function exibirCarrinho() {
     $dados["produtos"] = $listaDeProdutos;
     exibir("carrinho/carrinho", $dados);
 }
+//else{
+  //  $msg = "Carrinho Vazio";
+    //exibir("carrinho/carrinho",$msg);
+//}
+
 /** anon */
 
 function tirar($idProduto) {        
@@ -36,8 +41,13 @@ function tirar($idProduto) {
     
     redirecionar("./carrinhoCompra/exibirCarrinho");
 }
-/** anon */
 
+function limparCarrinho() {
+    unset($_SESSION['carrinho']);
+    redirecionar("./carrinhoCompra/exibirCarrinho");
+}
+
+/** anon */
 function desconto(){
     
-}
+}    
