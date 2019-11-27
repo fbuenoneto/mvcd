@@ -33,7 +33,7 @@ function adicionar(){
     
      print_r($idUsuario);
      
-     $msg = adicionarPedido($idUsuario,$FormaP,$endereco,$Cupom,$Preco);
+     $msg = adicionarPedido($idUsuario,$FormaP, $endereco, $Cupom, $Preco);
      echo $msg;
     }
     

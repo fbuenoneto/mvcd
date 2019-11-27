@@ -33,6 +33,8 @@ idendereco INT(11) NOT NULL,
 FormaPagamento VARCHAR (11) NOT NULL,
 Cupom VARCHAR(11) NOT NULL,
 Preco VARCHAR(11) NOT NULL,
+datacompra date NOT NULL,
+total varchar(15) NOT NULL,
 PRIMARY KEY(idpedido),
 FOREIGN KEY(idusuario) REFERENCES usuario(idusuario) ON DELETE CASCADE ON UPDATE CASCADE,
 FOREIGN KEY(idendereco) REFERENCES endereco(idendereco) ON DELETE CASCADE ON UPDATE CASCADE
