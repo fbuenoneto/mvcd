@@ -1,4 +1,4 @@
-    <div id="tudo">
+<div id="tudo">
     <h1><?=$produtos['nomeproduto']?></h1>
     <table id="tabela" border="0">
       <tr>
@@ -14,11 +14,12 @@
             <p>Descrição: <?=$produtos['descricao']?></p>
             <p>Tamanho: <?=$produtos['tamanho']?></p>
             <p>Categoria: <?=$produtos['idcategoria']?></p>
-            <p><a href="./carrinhoCompra/comprar/<?=$produtos['idproduto']?>" style="text-decoration:none; color: black" class="btn btn-danger">Comprar Item</a></p>
+            <p>Estoque mínimo: <?=$produtos['estoque_minimo']?></p>
+            <p>Estoque máximo: <?=$produtos['estoque_maximo']?></p>
         </td>
       </tr>
      
-      <th><p><a href="./paginas/" style="text-decoration:none; color: black">Voltar</a></p></th>
+      <th><p><a href="./produtos/ListarTodosProdutos" style="text-decoration:none; color: black">Voltar</a></p></th>
      
     </table>
     </div>

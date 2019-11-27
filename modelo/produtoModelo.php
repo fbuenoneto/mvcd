@@ -10,6 +10,7 @@ function pegarProdutoPorNome($nome){
     return $produtos;
 }
 
+
 function adicionarProduto($categoria, $preco, $nome, $descricao, $tamanho, $imagem,  $estoqueminimo, $estoquemaximo) {
     $sql = "INSERT INTO produtos (idcategoria, preco,nomeproduto,descricao,tamanho,imagem,estoque_minimo,estoque_maximo) "
             . "VALUES ('$categoria','$preco','$nome', '$descricao', '$tamanho', '$imagem', '$estoqueminimo', '$estoquemaximo')";

@@ -17,6 +17,11 @@ function visualizar($idproduto) {
     exibir("produto/visualizar", $dados);
 }
 
+function visualizarAdmin($idproduto) {
+    $dados["produtos"] = pegarProdutoPorId($idproduto);
+    exibir("produto/visualizarAdmin", $dados);
+}
+
 /** A */
 function ListarTodosProdutos() {
     $dados["produto"] = pegarTodosProdutos();

@@ -1,11 +1,13 @@
 <?php
+require_once 'modelo/produtoModelo.php';
 
 /* CONTROLADOR
  * funçao: controlar as páginas estáticas (páginas sem acesso ao modelo)  */
 
 /** anon*/
 function index() {
-    exibir("paginas/inicial");
+    $dados["produto"] = pegarTodosProdutos();
+    exibir("paginas/inicial",$dados);
 }
 
 function admin(){

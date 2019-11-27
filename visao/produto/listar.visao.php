@@ -18,7 +18,7 @@
         <td><?=$produtos['nomeproduto']?></td>
         <td><?=$produtos['preco']?></td>
         <td><?=$produtos['descricao']?></td>
-        <td><a href="./produtos/visualizar/<?=$produtos['idproduto']?>" style="text-decoration:none; color: inherit" class="btn btn-secondary" class="btn btn-secondary">Detalhar</a></td>
+        <td><a href="./produtos/visualizarAdmin/<?=$produtos['idproduto']?>" style="text-decoration:none; color: inherit" class="btn btn-secondary" class="btn btn-secondary">Detalhar</a></td>
         <td><a href="./produtos/editar/<?=$produtos['idproduto']?>" style="text-decoration:none; color: inherit" class="btn btn-secondary" class="btn btn-info">Editar</a></td>
         <td><a href="./produtos/deletar/<?=$produtos['idproduto']?>" style="text-decoration:none; color: inherit" class="btn btn-secondary" class="btn btn-danger">Deletar</a></td>
     </tr>
