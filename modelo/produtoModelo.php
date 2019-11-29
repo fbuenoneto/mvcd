@@ -46,6 +46,7 @@ function deletarProduto($idproduto) {
             
 }
 
+
 //Função de pesquisa quem sabe
 //function pegarProdutoPorId($idproduto) {
     //$sql = "SELECT produtos.*, categoria.nome FROM produtos"

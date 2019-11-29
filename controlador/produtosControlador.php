@@ -2,6 +2,7 @@
 
 require_once "modelo/produtoModelo.php";
 require_once 'modelo/categoriaModelo.php';
+require_once "servico/uploadServico.php";
 
 function buscar(){
     if(ehPost()){    
@@ -39,7 +40,14 @@ function adicionar() {
         $categoria = $_POST["categorias"];
         $estoqueminimo = $_POST["estoqueminimo"];
         $estoquemaximo = $_POST["estoquemaximo"];
-          
+        
+        
+        $temp_imagem = $_FILES['imagem']['tmp_name'];
+        $name_imagem = $_FILES['imagem']['name'];
+        $imagem = upload($temp_imagem,$name_imagem);
+        echo "<img src='$imagem'>";
+        
+        
         $msg = adicionarProduto( $categoria, $preco, $nome, $descricao, $tamanho, $imagem, $estoqueminimo, $estoquemaximo);
         
         redirecionar("produtos/ListarTodosProdutos");

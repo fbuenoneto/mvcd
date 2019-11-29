@@ -5,7 +5,7 @@
     <p>Nome: <input type="text" name="nome" value="<?=@$produto['nome']?>"></p>
     <p>Descrição: <input type="text" name="descricao" value="<?=@$produto['descricao']?>"></p>
     <p>Tamanho: <input type="text" name="tamanho" value="<?=@$produto['tamanho']?>"></p>
-    <p>Imagem: <input type="text" name="imagem" value="<?=@$produto['imagem']?>"></p>
+    <p> Imagem: <br><input type="file" name="imagem" value="<?=@$produto['imagem']?>"></p>
     <p>Categorias: 
         <select name="categorias">
 		<option value="default">Selecione uma categoria</option>
