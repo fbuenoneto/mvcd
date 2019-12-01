@@ -36,7 +36,6 @@ function adicionar() {
         $nome = $_POST["nome"];
         $descricao = $_POST["descricao"];
         $tamanho = $_POST["tamanho"];
-        $imagem = $_POST["imagem"];
         $categoria = $_POST["categorias"];
         $estoqueminimo = $_POST["estoqueminimo"];
         $estoquemaximo = $_POST["estoquemaximo"];
@@ -47,10 +46,7 @@ function adicionar() {
         $imagem = upload($temp_imagem,$name_imagem);
         echo "<img src='$imagem'>";
         
-        
-        $msg = adicionarProduto( $categoria, $preco, $nome, $descricao, $tamanho, $imagem, $estoqueminimo, $estoquemaximo);
-        
-        redirecionar("produtos/ListarTodosProdutos");
+       $msg = adicionarProduto($categoria, $preco, $nome, $descricao, $tamanho, $imagem, $estoqueminimo, $estoquemaximo);
         
     } else {
         $categorias = array();

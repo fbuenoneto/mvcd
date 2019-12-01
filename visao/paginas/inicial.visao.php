@@ -6,7 +6,7 @@
 <?php foreach ($produto as $produtos): ?>
     <div id="produto">
     <tr>
-        <td><img id="imageminicial" src="publico/imagens/donutsgranulado.jpg"></td>
+        <td><img id="imageminicial" src="<?=$produtos['imagem']?>"></td>
         <div id="textop">
         <br><td><?=$produtos['nomeproduto']?></td>
         <br>Preço:R$<td><?=$produtos['preco']?>,00</td>
