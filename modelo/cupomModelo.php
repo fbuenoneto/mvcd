@@ -38,3 +38,10 @@ function deletarCupom($idcupom) {
     return 'Forma de Pagamento deletada com sucesso!';
             
 }
+
+function pegardescontoPorNome($nome){
+    $sql = "SELECT desconto FROM cupom WHERE upper(nomecupom) like upper('%".$nome."%')";
+    $resultado = mysqli_query(conn(), $sql);
+    $cupom = mysqli_fetch_assoc($resultado);
+    return $cupom;
+}

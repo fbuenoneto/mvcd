@@ -39,4 +39,13 @@ function deletarEndereco($idendereco) {
             
 }
 
+function pegarEnderecosPorUsuario($idusuario){
+    $sql = "SELECT * FROM endereco WHERE idusuario = '$idusuario'" ;
+    $resultado = mysqli_query(conn(),$sql);
+    $enderecos = array();
+    while ($linha = mysqli_fetch_assoc($resultado)){
+        $enderecos[] = $linha;
+    }
+   return $enderecos; 
+}
 

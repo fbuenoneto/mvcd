@@ -47,12 +47,3 @@ function deletarProduto($idproduto) {
 }
 
 
-//Função de pesquisa quem sabe
-//function pegarProdutoPorId($idproduto) {
-    //$sql = "SELECT produtos.*, categoria.nome FROM produtos"
-            //. "inner join categoria on produtos.idcategoria=categoria.idcategoria"
-            //. "WHERE idproduto= $idproduto";
-    //$resultado = mysqli_query(conn(), $sql);
-    //$produtos = mysqli_fetch_assoc($resultado);
-    //return $produtos;
-//}
