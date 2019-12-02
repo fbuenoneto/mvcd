@@ -1,22 +1,17 @@
 <h2>Todos os Produtos Encontrados</h2>
 
-<table class="table">
-    <thead>
-        <tr>
-            <th>ID</th>
-            <th>Nome</th>
-            <th>Preço</th>
-            <th>Descrição</th>
-            <th>Detalhar</th>
-        </tr>
-    </thead>
-    <?php foreach ($produto as $produtos): ?>
+<div id="produtos">
+<?php foreach ($produto as $produtos): ?>
+    <div id="produto">
     <tr>
-        <td><?=$produtos['idproduto']?></td>
-        <td><?=$produtos['nomeproduto']?></td>
-        <td><?=$produtos['preco']?></td>
-        <td><?=$produtos['descricao']?></td>
-        <td><a href="./produtos/visualizar/<?=$produtos['idproduto']?>" style="text-decoration:none; color: inherit" class="btn btn-secondary" class="btn btn-secondary">Detalhar</a></td>
+        <td><img id="imageminicial" src="<?=$produtos['imagem']?>"></td>
+        <div id="textop">
+        <br><td><?=$produtos['nomeproduto']?></td>
+        <br>Preço:R$<td><?=$produtos['preco']?>,00</td>
+        <br>Descrição:<td><?=$produtos['descricao']?></td>
+        <br><div id="detalhar"><td><a href="./produtos/visualizar/<?=$produtos['idproduto']?>" style="text-decoration:none; color: inherit">Detalhar-></a></td></div>
+        </div>
     </tr>
+    </div>
     <?php endforeach; ?>
-</table>
+</div>

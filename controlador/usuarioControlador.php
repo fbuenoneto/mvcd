@@ -94,3 +94,12 @@ function visualizar($id) {
     $dados["usuario"] = pegarUsuarioPorId($id);
     exibir("usuario/visualizar", $dados);
 }
+
+function MeuPedido(){
+  $idusuario = acessoPegarUsuarioLogado();
+  $dados["pedidos"]=  PedidosUsuario($idusuario);   
+  exibir('usuario/PedidosFeitos', $dados);
+}
+
+
+

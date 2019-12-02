@@ -13,7 +13,7 @@
        <a href ="./paginas" style="text-decoration:none; color: inherit" class="btn btn-secondary"><h1> Donuts Café </h1></a>
       
       <a href="./carrinhoCompra/exibirCarrinho" style="text-decoration:none; color: inherit" class="btn btn-secondary"> <img id="icone"  src="./publico/imagens/carrinhon.png"></a>
-      <a href="./usuario/adicionar" style="text-decoration:none; color: inherit" class="btn btn-secondary"><img src="./publico/imagens/usuario1.png"></a>
+      <a href="./login/admin" style="text-decoration:none; color: inherit" class="btn btn-secondary"><img src="./publico/imagens/usuario1.png"></a>
       
       <form action="produtos/buscar" method="POST" class="buscas">
         <input type="search" class="search-input" name="buscar">

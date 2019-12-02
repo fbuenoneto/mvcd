@@ -10,8 +10,3 @@
     <input id="passwd" class="form-control" type="password" name="senha">
     <button type="submit" class="btn btn-primary">vai login</button>
 </form>
-
-<h3>Se ainda não tem conta, cadastre-se em nosso site!</h3>
-
-<h4><a href="./usuario/adicionar" style="text-decoration:none; color: inherit">Cadastrar-></a></h4>
-    

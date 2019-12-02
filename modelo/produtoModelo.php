@@ -11,9 +11,9 @@ function pegarProdutoPorNome($nome){
 }
 
 
-function adicionarProduto($categoria, $preco, $nome, $descricao, $tamanho, $imagem,  $estoqueminimo, $estoquemaximo) {
-    $sql = "INSERT INTO produtos (idcategoria, preco,nomeproduto,descricao,tamanho,imagem,estoque_minimo,estoque_maximo) "
-            . "VALUES ('$categoria','$preco','$nome', '$descricao', '$tamanho', '$imagem', '$estoqueminimo', '$estoquemaximo')";
+function adicionarProduto($categoria, $preco, $nome, $descricao, $tamanho, $imagem,  $estoqueminimo, $estoquemaximo,$quantidade) {
+    $sql = "INSERT INTO produtos (idcategoria, preco,nomeproduto,descricao,tamanho,imagem,estoque_minimo,estoque_maximo, quantidade) "
+            . "VALUES ('$categoria','$preco','$nome', '$descricao', '$tamanho', '$imagem', '$estoqueminimo', '$estoquemaximo','$quantidade')";
     
    echo $sql; 
     $resultado = mysqli_query($cnx = conn(), $sql);
@@ -46,4 +46,12 @@ function deletarProduto($idproduto) {
             
 }
 
-
+function PegaProdutoEstoque(){
+    $sql = "select nomeproduto, quantidade from produtos";
+    $result = mysqli_query(conn(), $sql);
+    $produtos = array();
+    while($linha = mysqli_fetch_assoc($result)){
+        $produtos[] = $linha;
+    }
+    return $produtos;
+}

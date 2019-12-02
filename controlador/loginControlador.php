@@ -17,6 +17,23 @@ function index() {
     }
     exibir("login/index");
 }
+
+/** anon */
+function admin() {
+    if (ehPost()) {
+        extract($_POST);
+        $usuario = pegarUsuarioPorEmailSenha($email, $senha);
+        
+        if (acessoLogar($usuario)) {
+            alert("bem vindo" . $login);
+            redirecionar("paginas");
+        } else {
+            alert("usuario ou senha invalidos!");
+        }
+    }
+    exibir("login/admin");
+}
+
 /** anon */
 function adicionar(){
     if (ehPost()){

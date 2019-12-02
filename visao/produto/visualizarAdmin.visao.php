@@ -6,7 +6,7 @@
         <th> Descrição </th>
       </tr>
       <tr>
-        <td><img id="imagemt" src="publico/imagens/donutsgranulado.jpg"></td>
+        <img id="imageminicial" src="<?=$produtos['imagem']?>">
         <td id="texto"> 
             <p>ID: <?=$produtos['idproduto']?></p>
             <p>Nome: <?=$produtos['nomeproduto']?></p>
@@ -14,12 +14,11 @@
             <p>Descrição: <?=$produtos['descricao']?></p>
             <p>Tamanho: <?=$produtos['tamanho']?></p>
             <p>Categoria: <?=$produtos['idcategoria']?></p>
-            <p>Estoque mínimo: <?=$produtos['estoque_minimo']?></p>
-            <p>Estoque máximo: <?=$produtos['estoque_maximo']?></p>
+            <p><a href="./carrinhoCompra/comprar/<?=$produtos['idproduto']?>" style="text-decoration:none; color: black" class="btn btn-danger">Comprar Item</a></p>
         </td>
       </tr>
      
-      <th><p><a href="./produtos/ListarTodosProdutos" style="text-decoration:none; color: black">Voltar</a></p></th>
+      <th><p><a href="./paginas/" style="text-decoration:none; color: black">Voltar</a></p></th>
      
     </table>
     </div>

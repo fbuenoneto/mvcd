@@ -19,6 +19,7 @@
 	</select><br></p>
     <p>Estoque Mínimo: <input type="text" name="estoqueminimo" value="<?=@$produto['estoqueminimo']?>"></p>
     <p>Estoque Máximo: <input type="text" name="estoquemaximo" value="<?=@$produto['estoquemaximo']?>"></p>
+    <p>Quantidade de Estoque: <input type="text" name="quantidade" value="<?=@$produto['quantidade']?>"></p>
     
     <button type="submit">Enviar</button>
 </form>

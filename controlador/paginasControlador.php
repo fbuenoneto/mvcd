@@ -7,11 +7,11 @@ require_once 'modelo/produtoModelo.php';
 /** anon*/
 function index() {
     $dados["produto"] = pegarTodosProdutos();
-    exibir("paginas/inicial",$dados);
+    exibir("./paginas/inicial",$dados);
 }
 
 function admin(){
-    exibir("paginas/administrador");
+    exibir("./paginas/administrador");
 }
 
 function sobre(){

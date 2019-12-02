@@ -34,7 +34,6 @@ FormaPagamento VARCHAR (11) NOT NULL,
 Cupom VARCHAR(11) NOT NULL,
 Preco VARCHAR(11) NOT NULL,
 datacompra date NOT NULL,
-total varchar(15) NOT NULL,
 PRIMARY KEY(idpedido),
 FOREIGN KEY(idusuario) REFERENCES usuario(idusuario) ON DELETE CASCADE ON UPDATE CASCADE,
 FOREIGN KEY(idendereco) REFERENCES endereco(idendereco) ON DELETE CASCADE ON UPDATE CASCADE
@@ -57,6 +56,7 @@ tamanho VARCHAR(60) NOT NULL,
 imagem VARCHAR(60) NOT NULL,
 estoque_minimo INT(11) NOT NULL,
 estoque_maximo INT(11) NOT NULL,
+quantidade INT(11) NOT NULL,
 PRIMARY KEY(idproduto),
 FOREIGN KEY(idcategoria) REFERENCES categoria(idcategoria) ON DELETE CASCADE ON UPDATE CASCADE 
 );
@@ -102,3 +102,49 @@ PRIMARY KEY(idForma)
 
 INSERT INTO usuario (nomeusuario,email,senha,cpf,datadenascimento,sexo,tipousuario) 
 VALUES ('Francisco','fbuenoneto@hotmail.com','admin','435.800.168-81','20/03/2002','M','A');
+
+INSERT INTO usuario (nomeusuario,email,senha,cpf,datadenascimento,sexo,tipousuario) 
+VALUES ('Lavinia','lavinia@hotmail.com','123','498.876.168-81','17/01/2003','M','p');
+
+-- Procedures :)
+
+DROP PROCEDURE IF EXISTS cadastrar_pedido ;
+DELIMITER $$
+
+CREATE PROCEDURE cadastrar_pedido(IN  idusuario INT(11), idendereco int(11), FormaPagamento INT(11), Cupom INT(11), Preco double)
+BEGIN
+declare datav date;
+IF(idusuario != 0)AND( FormaPagamento != 0) and  (idendereco != 0) and (Preco != 0) THEN
+SET datav = CURDATE();
+INSERT INTO pedido (idusuario, idendereco,FormaPagamento, Cupom, Preco, datacompra)  
+VALUES(idusuario, idendereco,FormaPagamento, Cupom, Preco,datav);
+ELSE
+SELECT "Informe valores válidos" AS Msg;
+END IF;
+END $$ 
+DELIMITER ;
+
+
+DROP PROCEDURE IF EXISTS MostrarPedidoUsuario ;
+DELIMITER $$
+
+CREATE PROCEDURE MostrarPedidoUsuario(IN  idusuario INT(11))
+BEGIN
+IF(idusuario != 0) THEN
+SELECT * FROM pedido WHERE idusuario = idusuario ;
+ELSE
+SELECT "Informe valores válidos" AS Msg;
+END IF;
+END $$ 
+DELIMITER ;
+
+DROP TRIGGER IF EXISTS tgr_diminuiestoque;
+DELIMITER $$
+CREATE TRIGGER tgr_diminuiestoque
+AFTER INSERT ON pedido_produto
+FOR EACH ROW
+BEGIN
+update produtos set produtos.quantidade = produtos.quantidade- New.quantidade   
+where produtos.idproduto = new.idproduto;
+END $$
+DELIMITER ;

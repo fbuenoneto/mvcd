@@ -25,16 +25,15 @@ function adicionar(){
         $listaDeProdutos[]=$produto;
     }
     
-     $idUsuario = acessoPegarIdUsuarioLogado();
-     $FormaP = $_POST["formaP"];
+     $idusuario = acessoPegarIdUsuarioLogado();
+     $FormaPagamento = $_POST["formaP"];
      $endereco = $_POST["endereco"];
      $Cupom = $_POST["cupom"];
      $Preco = $soma;
-    
-     print_r($idUsuario);
      
-     $msg = adicionarPedido($idUsuario,$FormaP, $endereco, $Cupom, $Preco);
+     $msg = adicionarPedido($idusuario,$FormaPagamento, $endereco, $Cupom, $Preco);
      echo $msg;
+     exibir("paginas/fim");
     }
     
     else{
