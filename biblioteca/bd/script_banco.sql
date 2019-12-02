@@ -111,13 +111,13 @@ VALUES ('Lavinia','lavinia@hotmail.com','123','498.876.168-81','17/01/2003','M',
 DROP PROCEDURE IF EXISTS cadastrar_pedido ;
 DELIMITER $$
 
-CREATE PROCEDURE cadastrar_pedido(IN  idusuario INT(11), idendereco int(11), FormaPagamento INT(11), Cupom INT(11), Preco double)
+CREATE PROCEDURE cadastrar_pedido(IN  idusuario INT(11), idendereco int(11), FormaPagamento INT(11), Preco double)
 BEGIN
 declare datav date;
 IF(idusuario != 0)AND( FormaPagamento != 0) and  (idendereco != 0) and (Preco != 0) THEN
 SET datav = CURDATE();
-INSERT INTO pedido (idusuario, idendereco,FormaPagamento, Cupom, Preco, datacompra)  
-VALUES(idusuario, idendereco,FormaPagamento, Cupom, Preco,datav);
+INSERT INTO pedido (idusuario, idendereco,FormaPagamento, Preco, datacompra)  
+VALUES(idusuario, idendereco,FormaPagamento, Preco, datav);
 ELSE
 SELECT "Informe valores válidos" AS Msg;
 END IF;
@@ -137,6 +137,16 @@ SELECT "Informe valores válidos" AS Msg;
 END IF;
 END $$ 
 DELIMITER ;
+
+DROP PROCEDURE DeletarPedido;
+DELIMITER $$
+CREATE PROCEDURE DeletarPedido(in idpedidof INT(11))
+BEGIN
+DELETE FROM pedido WHERE idpedido = idpedidof;
+END $$
+DELIMITER;
+
+
 
 DROP TRIGGER IF EXISTS tgr_diminuiestoque;
 DELIMITER $$

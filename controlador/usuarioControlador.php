@@ -1,6 +1,7 @@
 <?php
 
 require_once "modelo/usuarioModelo.php";
+require_once "modelo/PedidoModelo.php";
 
 /** anon */
 function ListarTodosUsuarios() {
@@ -96,7 +97,7 @@ function visualizar($id) {
 }
 
 function MeuPedido(){
-  $idusuario = acessoPegarUsuarioLogado();
+  $idusuario = acessoPegarIdUsuarioLogado();
   $dados["pedidos"]=  PedidosUsuario($idusuario);   
   exibir('usuario/PedidosFeitos', $dados);
 }

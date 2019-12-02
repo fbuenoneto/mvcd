@@ -1,4 +1,4 @@
-<form action="" method="POST">
+<form action="./pedido/adicionar/<?=$total?>" method="POST">
     <p>Forma de pagamento: 
         <select name="formaP">
 		<option value="default">Selecione uma forma de pagamento</option>
@@ -18,10 +18,14 @@
 		<?php endforeach;?>
 	</select>
      </p>
-     
-    <p>Cupom: <input type="text" name="cupom" ></p>
     <p>Preço: R$<?=@$total?>
 </p>
 
  <button type="submit">Enviar</button>
+</form>
+
+<h2> Possui algum Cupom? </h2>
+<form action="./carrinhoCompra/desconto/<?= $total ?>" method="POST"> 
+    <p>Cupom: <input type="text" name="nomec" ></p>
+<button type="submit">Enviar</button>
 </form>

@@ -1,5 +1,8 @@
 <?php
 require_once "modelo/produtoModelo.php";
+require_once "modelo/cupomModelo.php";
+require_once "modelo/enderecoModelo.php";
+require_once "modelo/formaPagamentoModelo.php";
 
 function comprar($idProduto) {   
     $_SESSION["carrinho"][] = $idProduto;
@@ -48,59 +51,25 @@ function limparCarrinho() {
 }
 
 /** anon */
-function desconto(){
+function desconto($total){
     if(ehPost()){
+       $desconto = 0;
        $nome = $_POST["nomec"];
        $desconto = pegardescontoPorNome($nome);
        $desconto = $desconto['desconto']/100;
-       
-       $total = 0;
+       $formas = array();
+        $formas = pegarTodasFormas();
+        $idUsuario = acessoPegarIdUsuarioLogado();
+        $rua = pegarTodosEnderecos($idUsuario); 
+
+        $dados["formas"] = $formas;
+        $dados["endereco"] = $rua;
     
-   if(isset($_SESSION["carrinho"])) {
-        $produtos = $_SESSION["carrinho"];
-        foreach ($produtos as $produto):
-            $prod =  pegarProdutoPorId($produto);
-            $todos[] = $prod;
-            $total += $prod["preco"];
-        endforeach;
-    } else {
-        echo "Carrinho vazio!";
-    }
-   
-    $id_cliente = acessoPegarUsuarioLogado();
-   
-    $dados = array();
-   
-   $dados["produto"] = $todos;
    $dados["total"] = number_format($total - ($total * $desconto),2); 
-   $dados['usuario'] =  pegarUsuarioPorId($id);
-   $dados['enderecos'] = pegarEnderecosPorUsuario($idusuario);
-   $dados['formapg'] =  pegarTodasFormas();
    
-   exibir('finalizar/finalizar', $dados);
+   exibir('pedido/pedido', $dados);
    }else{
-       $total = 0;
-    
-   if(isset($_SESSION["carrinho"])) {
-        $produtos = $_SESSION["carrinho"];
-        foreach ($produtos as $produto):
-            $prod =  MostrarProdutoPorCodigo($produto);
-            $todos[] = $prod;
-            $total += $prod["preco"];
-        endforeach;
-    } else {
-        echo "Carrinho vazio!";
-    }
-   
-    $id_cliente = acessoPegarUsuarioLogado();
-   $dados = array();
-   
-   $dados["produto"] = $todos;
-   $dados["total"] = $total; 
-   $dados['cliente'] = MostrarClientePorCodigo($id_cliente);
-   $dados['enderecos'] = pegarEnderecosPorUsuario($id_cliente);
-   $dados['formapg'] = pegarTodasFormasDePagamento();
-   exibir('finalizar/finalizar', $dados);
+       redirecionar("pedido/adicionar");
    }
 }
  

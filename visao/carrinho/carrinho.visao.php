@@ -26,6 +26,6 @@
 </table>
 <p>Total: R$<?=$total?></p>
 <p><a href="./carrinhoCompra/limparCarrinho"style=" text-decoration:none; color: inherit">Limpar Carrinho</a></p>
-<p><a href="./pedido/" style="text-decoration:none; color: inherit">Finalizar Pedido</a></p>
+<p><a href="./pedido/adicionar/<?=$total?>" style="text-decoration:none; color: inherit">Finalizar Pedido</a></p>
 <a href="./paginas/" style="text-decoration:none; color: inherit">Continuar Comprando</a>
 

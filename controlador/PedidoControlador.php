@@ -14,7 +14,7 @@ function finalizar(){
     
 }
 
-function adicionar(){
+function adicionar($total){
     if(ehPost()){     
         
      $soma = 0;
@@ -28,12 +28,11 @@ function adicionar(){
      $idusuario = acessoPegarIdUsuarioLogado();
      $FormaPagamento = $_POST["formaP"];
      $endereco = $_POST["endereco"];
-     $Cupom = $_POST["cupom"];
-     $Preco = $soma;
+     $Preco = $total;
      
-     $msg = adicionarPedido($idusuario,$FormaPagamento, $endereco, $Cupom, $Preco);
+     $msg = adicionarPedido($idusuario,$FormaPagamento, $endereco, $Preco);
      echo $msg;
-     exibir("paginas/fim");
+     redirecionar("usuario/MeuPedido");
     }
     
     else{
@@ -58,3 +57,7 @@ function adicionar(){
     } 
 }
 
+function deletar($idpedido) {
+    deletarPedido($idpedido);
+    redirecionar("usuario/MeuPedido");
+}
