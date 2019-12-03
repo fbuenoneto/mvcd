@@ -53,6 +53,7 @@ function adicionar($total){
     $dados["formas"] = $formas;
     $dados["carrinho"] = $carro;
     $dados["endereco"] = $rua;
+    print_r($dados);
     exibir("pedido/pedido", $dados);
     } 
 }

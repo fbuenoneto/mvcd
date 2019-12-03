@@ -55,7 +55,7 @@ function adicionar(){
 function logout() {
     acessoDeslogar();
     alert("deslogado com sucesso!");
-    redirecionar("usuario");
+    redirecionar("paginas");
 }
 
 ?>

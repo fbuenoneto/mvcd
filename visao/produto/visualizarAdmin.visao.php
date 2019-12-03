@@ -6,7 +6,7 @@
         <th> Descrição </th>
       </tr>
       <tr>
-        <img id="imageminicial" src="<?=$produtos['imagem']?>">
+        <img id="imagemt" src="<?=$produtos['imagem']?>">
         <td id="texto"> 
             <p>ID: <?=$produtos['idproduto']?></p>
             <p>Nome: <?=$produtos['nomeproduto']?></p>
