@@ -64,13 +64,13 @@ function adicionar() {
 
 } 
 
-/** p, A */
+/** P, A */
 function deletar($id) {
     deletarUsuario($id);
     redirecionar("usuario/ListarTodosUsuarios");
 }
 
-/** p */
+/** anon */
 function editar($id) {
     if (ehPost()) {
         $nome = $_POST["nome"];
