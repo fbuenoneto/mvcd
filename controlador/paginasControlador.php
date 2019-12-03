@@ -16,7 +16,7 @@ function admin(){
     exibir("./paginas/administrador");
 }
 
-/** A,P*/
+/** A,p*/
 function usuario(){
     $id = acessoPegarIdUsuarioLogado();
     $dados["usuario"] = pegarUsuarioPorId($id);
