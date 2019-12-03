@@ -17,7 +17,7 @@
                     <tr>
                         <td><?= $pedido["datacompra"]?></td>
                         <td><?= $pedido["Preco"]?></td>                       
-                        <td><a href="./Pedido/deletar/<?=$pedido["idpedido"]?>"> Deletar </a></td>
+                        <td><a href="./Pedido/deletar/<?=$pedido["idpedido"]?>" style="text-decoration:none; color: black"> Deletar </a></td>
                        
                     </tr>
 

@@ -9,5 +9,6 @@
 
 <p><a href="./endereco/adicionar/<?=$usuario['idusuario']?>" style="text-decoration:none; color: black">Adicionar Endereço</a></p>
 <p><a href="./endereco/ListarTodosEnderecosPorId/<?=$usuario['idusuario']?>" style="text-decoration:none; color: black">Listar Endereços Cadastrados</a></p>
+<p><a href="./usuario/MeuPedido" style="text-decoration:none; color: black">Ver meus pedidos</a></p>
 <p><a href="./login/logout" style="text-decoration:none; color: black">Sair de sua sessão-></a></p>
 
