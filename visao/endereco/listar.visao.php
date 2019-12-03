@@ -4,8 +4,6 @@
 <table class="table">
     <thead>
         <tr>
-            <th>IdEndereco</th>
-            <th>IdUsuario</th>
             <th>logradouro</th>
             <th>numero</th>
             <th>complemento</th>
@@ -16,8 +14,6 @@
     </thead>
     <?php foreach ($endereco as $end): ?>
     <tr>
-       <td><?=$end['idendereco']?></td>
-       <td><?=$end['idusuario']?></td>
        <td><?=$end['logradouro']?></td>
        <td><?=$end['numero']?></td>
        <td><?=$end['complemento']?></td>

@@ -1,5 +1,6 @@
 <h2>Olá cliente <?=$usuario['nomeusuario']?></h2>
-<p>id: <?=$usuario['idusuario']?></p>
+
+
 <p>Nome: <?=$usuario['nomeusuario']?></p>
 <p>E-mail: <?=$usuario['email']?></p>
 <p>Senha: <?=$usuario['senha']?></p>
